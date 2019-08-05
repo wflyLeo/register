@@ -54,5 +54,3 @@ file:
     accessKeySecret: xxx
     bucketName: xxx
     domain: https://xxx
-    
-test: kong

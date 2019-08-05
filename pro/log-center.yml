@@ -6,7 +6,7 @@ logging:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://local.mysql.com:3306/cloud_file?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://local.mysql.com:3306/cloud_log?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
     username: root
     password: root
     hikari:
@@ -19,10 +19,10 @@ spring:
     username: cloud-dev
     password: cloud-dev
     virtual-host: /
-  servlet:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
+    listener:
+      simple:
+        concurrency: 20
+        max-concurrency: 50
   mvc:
     servlet:
       load-on-startup: 1
@@ -34,7 +34,7 @@ spring:
     sender:
       type: web
 mybatis:
-  type-aliases-package: com.cloud.file.model
+  type-aliases-package: com.cloud.model.log
   mapper-locations: classpath:/mybatis-mappers/*
   configuration:
     mapUnderscoreToCamelCase: true
@@ -43,16 +43,6 @@ security:
     resource:
       user-info-uri: http://local.gateway.com:8080/api-o/user-me
       prefer-token-info: false
-file:
-  local:
-    path: d:/localFile
-    prefix: /statics
-    urlPrefix: http://api.gateway.com:8080/api-f${file.local.prefix}
-  aliyun:
-    endpoint: xxx
-    accessKeyId: xxx
-    accessKeySecret: xxx
-    bucketName: xxx
-    domain: https://xxx
-    
-test: kong
+elasticsearch:
+  clusterName: elasticsearch
+  clusterNodes: 127.0.0.1:9300

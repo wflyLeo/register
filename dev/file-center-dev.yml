@@ -55,4 +55,4 @@ file:
     bucketName: xxx
     domain: https://xxx
     
-test: kong
+test: dev    
