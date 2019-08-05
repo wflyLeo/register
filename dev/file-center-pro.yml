@@ -55,4 +55,8 @@ file:
     bucketName: xxx
     domain: https://xxx
     
-test: pro    
+test: pro 
+
+management:
+  security:
+    enabled: false   

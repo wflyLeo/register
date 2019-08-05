@@ -54,5 +54,7 @@ file:
     accessKeySecret: xxx
     bucketName: xxx
     domain: https://xxx
-    
+management:
+  security:
+    enabled: false    
 test: kong
