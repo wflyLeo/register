@@ -54,3 +54,4 @@ file:
     accessKeySecret: xxx
     bucketName: xxx
     domain: https://xxx
+test: "file in pro path:file-center.yml"
