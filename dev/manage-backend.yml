@@ -6,18 +6,18 @@ logging:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://local.mysql.com:3306/cloud_backend?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/cloud_backend?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
     username: root
-    password: root
+    password: a123
     hikari:
       minimum-idle: 5
       maximum-pool-size: 20
       connection-test-query: SELECT 1
   rabbitmq:
-    host: local.rabbitmq.com
+    host: localhost
     port: 5672
-    username: cloud-dev
-    password: cloud-dev
+    username: root
+    password: a123
     virtual-host: /
   mail:
     default-encoding: UTF-8
@@ -46,5 +46,5 @@ mybatis:
 security:
   oauth2:
     resource:
-      user-info-uri: http://local.gateway.com:8080/api-o/user-me
+      user-info-uri: http://localhost:8080/api-o/user-me
       prefer-token-info: false
