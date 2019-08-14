@@ -1,6 +1,6 @@
 spring:
   redis:
-    host: local.redis.com
+    host: localhost
     port: 6379
     password:
     timeout: 10s
